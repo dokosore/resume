@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>職務経歴書</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="131ba6c8-d18d-46b4-9931-44c9a1e4dd07" class="page sans"><header><h1 class="page-title">職務経歴書</h1><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="a7c6d656-894b-4462-b215-96bd507cb437" class="">2022年2月2日</p><p id="190996a5-7d2c-4d5f-ba2b-7f5d5f9b3457" class="">
+</p><h2 id="ebe0e6e2-4409-45db-a102-faa8d603a899" class="">プロフィール</h2><table id="4fdeccc4-d3bc-4570-bc1c-96ece3edbaab" class="simple-table"><tbody><tr id="54e2dbd1-ca51-4bdd-90bc-016f4f04d04b"><td id="u[nu">氏名</td><td id="LwKa">斉藤開</td></tr><tr id="b9aa2d5a-ce85-4acc-b444-0606ccb2e278"><td id="u[nu">役職</td><td id="LwKa">フロントエンドエンジニア・UIデザイナー・経営</td></tr><tr id="8999c76e-fed6-4e23-9acb-462b4c7eed0a"><td id="u[nu">週間稼働時間</td><td id="LwKa">40時間</td></tr><tr id="0664f1d5-261a-41ff-b1b1-49278f660df5"><td id="u[nu">参考時給</td><td id="LwKa">5000円</td></tr></tbody></table><h2 id="9b45f927-63b5-42e3-87d1-7f6fe00ccce9" class="">エンジニアとしての強み</h2><ul id="0f1da4e3-2144-43df-b05d-c937f0956c43" class="bulleted-list"><li style="list-style-type:disc">高い学習能力があり、新しい技術への対応力が高い</li></ul><ul id="711d6c5d-5c5b-40f2-ad56-8cfdba86d94e" class="bulleted-list"><li style="list-style-type:disc">変更容易性の高い設計とコーディングができる</li></ul><ul id="36c17b13-b6bc-4590-a003-001462321e95" class="bulleted-list"><li style="list-style-type:disc">汎用性の高いデザインとコーディングができる</li></ul><h2 id="50c9658f-5c5e-4395-acda-5ed96fcb7269" class="">経歴</h2><table id="3e6de70b-c996-48cc-a4f0-aeddc24698eb" class="simple-table"><tbody><tr id="99b2d03d-60a8-40a2-91cf-5be303e4c39f"><td id="&gt;QrQ">2019年11月</td><td id="=kCk">映像/3DCG/Webフロントエンド開発で個人事業を開始</td></tr><tr id="1ad4c0d5-bd21-44e0-842d-5be88e36125d"><td id="&gt;QrQ">2020年3月</td><td id="=kCk">三重県鈴鹿高専卒業</td></tr><tr id="33bc4f03-13f5-4594-ae5e-defce469f9a2"><td id="&gt;QrQ">2020年4月</td><td id="=kCk">東京工業大学3年次編入学</td></tr><tr id="1aa36da8-63a9-4547-bb1e-feb8fc0803c8"><td id="&gt;QrQ">2020年11月</td><td id="=kCk">形態素解析を用いて、速読アルゴリズムYondleの開発を開始</td></tr><tr id="e962f511-0984-429a-9814-9aeb903e8f70"><td id="&gt;QrQ">2021年3月</td><td id="=kCk">Yondleでのエクイティ調達のためチームを法人化（株式会社DOKOSORE）
+（最終的に調達はしませんでした）</td></tr><tr id="ecd94c55-0c25-4324-9fc2-4e3477890123"><td id="&gt;QrQ">2021年11月</td><td id="=kCk">株式会社DOKOSOREで受託開発を開始</td></tr></tbody></table><h2 id="e71f7c1c-6906-43e4-908f-4789f154bffa" class="">スキルスタック</h2><table id="bfad83bb-07d5-4a65-afb6-2bd9ecaa2218" class="simple-table"><thead><tr id="dc93ea3d-c72d-4100-b7f3-0793a3d52520"><th id="C_CB" class="simple-table-header">言語/フレームワーク</th><th id="kiCG" class="simple-table-header">経験年数</th><th id="[|fB" class="simple-table-header">備考</th></tr></thead><tbody><tr id="cdf6f76b-bccb-4fc1-9fde-c7824cb25e84"><td id="C_CB">JavaScript</td><td id="kiCG">2</td><td id="[|fB">jQueryでのホームページ制作からReactでのWebサービス開発まで経験</td></tr><tr id="1db729f2-8579-41b1-aa90-649c2e2f3a97"><td id="C_CB">TypeScript</td><td id="kiCG">1.5</td><td id="[|fB"></td></tr><tr id="a49e91c5-9e35-4a9f-9c1a-7ef4cb0f0e03"><td id="C_CB">React</td><td id="kiCG">1.5</td><td id="[|fB">Hooksを使用
+状態管理としてReduxまたはRecoilを使用可能</td></tr><tr id="f2b8ba9c-d3c7-4415-87b7-201348eb308e"><td id="C_CB">Next.js</td><td id="kiCG">1</td><td id="[|fB">SSGを有効に用いてパフォーマンスを最大化するように設計可能</td></tr><tr id="3a28ed72-ddc8-4d82-8ae7-ca14549380df"><td id="C_CB">Sass</td><td id="kiCG">1.5</td><td id="[|fB">mixin等を用いて効率的で汎用性の高いコーディングが可能</td></tr><tr id="2b7b1da9-dfff-4bb6-98a5-efcc35f26250"><td id="C_CB">Firebase</td><td id="kiCG">1.5</td><td id="[|fB">NoSQLに適するように非正規化を十分に活かした設計が可能</td></tr><tr id="d8e32c03-23f1-4af6-9b26-2403762aa63f"><td id="C_CB">Dart</td><td id="kiCG">1</td><td id="[|fB"></td></tr><tr id="72397223-9901-4306-a86b-585cb950822f"><td id="C_CB">Flutter</td><td id="kiCG">1</td><td id="[|fB">MVVMを採用し、変更容易性と可読性の高いコーディングが可能</td></tr><tr id="a4a5c249-decd-4e4c-b74d-d54ec3d7b9eb"><td id="C_CB">Python</td><td id="kiCG">1</td><td id="[|fB"></td></tr></tbody></table><p id="9d3d1fc8-a75f-4416-9ffc-af5c04d82960" class="">
+</p><h2 id="e0aa817f-4774-40d1-abf2-5c5ba3145060" class="">開発経歴</h2><table id="3f60ef48-196a-4127-a01e-d354830abf8e" class="simple-table"><thead><tr id="e95c74c5-7303-4f48-b015-f9855179661c"><th id="~U@n" class="simple-table-header">制作物</th><th id="wuzD" class="simple-table-header">制作内容</th><th id="b[]J" class="simple-table-header">技術</th><th id="nSKr" class="simple-table-header">技術の選定理由</th><th id="AB`P" class="simple-table-header">自分の担当</th></tr></thead><tbody><tr id="6db2b93b-38ce-4a70-875b-c601db9c265c"><td id="~U@n">速読アルゴリズム Yondle</td><td id="wuzD">長い文章を分割してフラッシュ暗算のように表示することで、眼球移動を限りなく抑え、読書速度を通常の3倍程度まで上げるアルゴリズム。
+分割単位は日本人が読みやすく設計されており、表示速度は内容にマッチした速度に調整される。</td><td id="b[]J">Python
+Django
+形態素解析
+MeCab</td><td id="nSKr">Pythonはすでに使い慣れており、MeCabは参考記事が多かったことから、左の技術を選定した。</td><td id="AB`P">読解力テストの設計など</td></tr><tr id="95cc1c16-947c-4a05-8a5e-6f7e2d3d7a94"><td id="~U@n">Yondle Webアプリ</td><td id="wuzD">YondleをWeb上で使用することができるWebアプリ
+青空文庫の書籍、PDF、入力したテキストを分割して表示することができる</td><td id="b[]J">JavaScript
+jQuery
+Sass
+React</td><td id="nSKr">YondleのWebアプリは2パターン作っており、片方はjQuery、片方はReactで制作した。
+第一弾はReactを使い慣れていなかったためjQueryを選定した。</td><td id="AB`P">技術の制定からコーディングまで全て担当</td></tr><tr id="8864442d-86fe-4b69-90a5-b5eaa04807f3"><td id="~U@n">東工大ZOOM授業出席システム(仮)</td><td id="wuzD">ZOOM授業のリンクがメールなのかWebなのかどこで確認をすればいいのかわかりづらい状況であったため、ZOOMリンクを自動で取得してまとめたダッシュボードを制作した。</td><td id="b[]J">Go
+Docker
+Swagger
+TypeScript
+React
+MaterialUI</td><td id="nSKr">バックエンド3人、フロントエンド3人で開発したため、シンプルで参考記事が多いGoと型付けができるTypeScriptを採用した。</td><td id="AB`P">Reactでのバックエンドとの通信</td></tr><tr id="938bf6bc-9f7b-4039-8048-2f4b7fc5ff68"><td id="~U@n">日程調整ツールGOTSUGO</td><td id="wuzD">日程調整ツールは多くあったが、実際はまだまだメールでのやりとりが多かった。
+そこでGoogleカレンダーからワンクリックで空いている時間帯だけをテキスト出力できるChrome拡張を制作した。</td><td id="b[]J">JavaScript</td><td id="nSKr">ビジネスにならないため、とにかく3日間で作りたかった。1番シンプルなChrome拡張の作成方法で制作した。</td><td id="AB`P">全て担当</td></tr><tr id="90527a24-1e5b-47dc-a51a-b61b0a8adc6c"><td id="~U@n">農Sight</td><td id="wuzD">現代の農業では土壌の管理を農家さんの経験と感覚で行っていることが多い。そこで、土壌のpHや窒素含有量が測定できるセンサーを開発し、農家さんの管理画面としてアプリを作成した。
+センサーは単独で動き、バックグラウンドでアプリへと値を渡すことができる。</td><td id="b[]J">Arduino
+センサー類
+Flutter
+Riverpod
+Flutter_blue(Bluetooth SDK)
+Firebase</td><td id="nSKr">立ち上げ段階のプロジェクトであったため、変更容易性にこだわった。クロスプラットフォームでの開発に加え、RiverpodでMVVMのような設計思想を用いることで、デザイン等の変更に強い形で開発をしたかったため、左の技術を採用した。</td><td id="AB`P">アプリ開発を全て担当</td></tr></tbody></table><p id="82b4bf40-242a-48e7-a73f-0cae2a627a04" class="">
+</p></div></article></body></html>
